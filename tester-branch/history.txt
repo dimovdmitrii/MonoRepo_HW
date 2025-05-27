@@ -1,0 +1,20 @@
+  503  ls -al
+  504  nano README.md
+  505  nano .gitignore
+  506  git status
+  507  git add README.md .gitignore
+  508  git status
+  509  git commit -am "Added change in README.md and .gitignore"
+  510  git push origin Feature
+  511  git commit --amend
+  512  checkout main
+  513  git checkout main
+  514  git checkout Feature
+  515  git push origin Feature
+  516  git push origin --force Feature
+  517  git checkout main
+  518  git merge Feature
+  519  history > history.txt
+  520  cat history.txt
+  521  nano history.txt
+  522  history | tail -n 20 > history.txt

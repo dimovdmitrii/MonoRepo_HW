@@ -1,0 +1,30 @@
+def transform(n_law: list, text: str='') -> str:
+    new_words = []
+    words = text.split()
+
+    for word in words:
+        len_word = len(word)
+        func_lst = [f for n, f in n_law if len_word == n]  # [lambda w: w.upper()]
+        if func_lst:
+            func = func_lst[0]
+            new_word = func(word)
+        else:
+            new_word = word
+        new_words.append(new_word)
+
+    return ' '.join(new_words)
+
+
+# Пример использования:
+sentence = "The quick brown fox jumps over the lazy dog"
+
+res = transform(
+    [
+        (3, lambda w: w.upper()),  # Если длина слова 3, сделать заглавным
+        (4, lambda w: '_'.join(list(w))),  # Если длина слова 4, разделить на буквы через _
+        (5, lambda w: '*****'),  # Если длина слова 5, заменить на 5 звездочек
+    ],
+    text=sentence
+)
+
+print(res)  # Выведет: THE quick ***** FOX jumps over the lazy dog

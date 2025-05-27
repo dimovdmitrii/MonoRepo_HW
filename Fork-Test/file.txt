@@ -1,0 +1,3 @@
+Hello Git
+This is new file in new branch
+Git gui test
